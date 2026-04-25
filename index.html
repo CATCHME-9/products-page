@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>口味展示目錄</title>
+    <title>食品目錄</title>
     <style>
         :root { --primary-color: #4a90e2; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f8f9fa; margin: 0; padding: 20px; color: #333; }
@@ -46,57 +46,69 @@
     <div class="tabs">
         <button class="tab-link active" onclick="showCategory('cat1')">曠世奇派</button>
         <button class="tab-link" onclick="showCategory('cat2')">杜老爺</button>
+        <button class="tab-link" onclick="showCategory('cat3')">貝納頌</button>
     </div>
 
     <div id="cat1" class="tab-content active">
         <div class="grid">
-            <div class="card" id="item1" onmousedown="pressStart('item1')" onmouseup="pressEnd()" ontouchstart="pressStart('item1')" ontouchend="pressEnd()">
-                <img src="ice-cream/2-1.png" alt="榛果那提">
+            <div class="card" id="ice-cream1" onmousedown="pressStart('ice-cream1')" onmouseup="pressEnd()" ontouchstart="pressStart('ice-cream1')" ontouchend="pressEnd()">
+                <img src="ice-cream/ice-cream1.png" alt="榛果那提">
                 <h4>榛果那提</h4>
             </div>
-            <div class="card" id="item2" onmousedown="pressStart('item2')" onmouseup="pressEnd()" ontouchstart="pressStart('item2')" ontouchend="pressEnd()">
-                <img src="ice-cream/2-2.png" alt="玫瑰鹽焦糖巧克力">
+            <div class="card" id="ice-cream2" onmousedown="pressStart('ice-cream2')" onmouseup="pressEnd()" ontouchstart="pressStart('ice-cream2')" ontouchend="pressEnd()">
+                <img src="ice-cream/ice-cream2.png" alt="玫瑰鹽焦糖巧克力">
                 <h4>玫瑰鹽焦糖巧克力</h4>
             </div>
-            <div class="card" id="item3" onmousedown="pressStart('item3')" onmouseup="pressEnd()" ontouchstart="pressStart('item3')" ontouchend="pressEnd()">
-                <img src="ice-cream/2-3.png" alt="卡布奇諾">
+            <div class="card" id="ice-cream3" onmousedown="pressStart('ice-cream2')" onmouseup="pressEnd()" ontouchstart="pressStart('ice-cream2')" ontouchend="pressEnd()">
+                <img src="ice-cream/ice-cream3.png" alt="卡布奇諾">
                 <h4>卡布奇諾</h4>
             </div>
-            <div class="card" id="item4" onmousedown="pressStart('item4')" onmouseup="pressEnd()" ontouchstart="pressStart('item4')" ontouchend="pressEnd()">
-                <img src="ice-cream/2-4.png" alt="草莓">
+            <div class="card" id="ice-cream4" onmousedown="pressStart('ice-cream4')" onmouseup="pressEnd()" ontouchstart="pressStart('ice-cream4')" ontouchend="pressEnd()">
+                <img src="ice-cream/ice-cream4.png" alt="草莓">
                 <h4>草莓</h4>
             </div>
-            <div class="card" id="item5" onmousedown="pressStart('item5')" onmouseup="pressEnd()" ontouchstart="pressStart('item5')" ontouchend="pressEnd()">
-                <img src="ice-cream/2-5.png" alt="比利時巧克力">
+            <div class="card" id="ice-cream5" onmousedown="pressStart('ice-cream5')" onmouseup="pressEnd()" ontouchstart="pressStart('ice-cream5')" ontouchend="pressEnd()">
+                <img src="ice-cream/ice-cream5.png" alt="比利時巧克力">
                 <h4>比利時巧克力</h4>
+            </div>
+            <div class="card" id="ice-cream6" onmousedown="pressStart('ice-cream6')" onmouseup="pressEnd()" ontouchstart="pressStart('ice-cream6')" ontouchend="pressEnd()">
+                <img src="ice-cream/ice-cream6.png" alt="提拉米蘇">
+                <h4>提拉米蘇</h4>
             </div>
         </div>
     </div>
 
     <div id="cat2" class="tab-content">
         <div class="grid">
-            <div class="card" id="item6" onmousedown="pressStart('item6')" onmouseup="pressEnd()" ontouchstart="pressStart('item6')" ontouchend="pressEnd()">
-                <img src="ice-bucket/1-1.png" alt="芋頭">
+            <div class="card" id="ice-bucket1" onmousedown="pressStart('ice-bucket1')" onmouseup="pressEnd()" ontouchstart="pressStart('ice-bucket1')" ontouchend="pressEnd()">
+                <img src="ice-bucket/ice-bucket1.png" alt="芋頭">
                 <h4>芋頭</h4>
             </div>
-            <div class="card" id="item7" onmousedown="pressStart('item7')" onmouseup="pressEnd()" ontouchstart="pressStart('item7')" ontouchend="pressEnd()">
-                <img src="ice-bucket/1-2.png" alt="香草">
+            <div class="card" id="ice-bucket2" onmousedown="pressStart('ice-bucket2')" onmouseup="pressEnd()" ontouchstart="pressStart('ice-bucket2')" ontouchend="pressEnd()">
+                <img src="ice-bucket/ice-bucket2.png" alt="香草">
                 <h4>香草</h4>
             </div>
-            <div class="card" id="item8" onmousedown="pressStart('item8')" onmouseup="pressEnd()" ontouchstart="pressStart('item8')" ontouchend="pressEnd()">
-                <img src="ice-bucket/1-3.png" alt="瑞士巧克力">
+            <div class="card" id="ice-bucket3" onmousedown="pressStart('ice-bucket3')" onmouseup="pressEnd()" ontouchstart="pressStart('ice-bucket3')" ontouchend="pressEnd()">
+                <img src="ice-bucket/ice-bucket3.png" alt="瑞士巧克力">
                 <h4>瑞士巧克力</h4>
             </div>
-            <div class="card" id="item9" onmousedown="pressStart('item9')" onmouseup="pressEnd()" ontouchstart="pressStart('item9')" ontouchend="pressEnd()">
-                <img src="ice-bucket/1-4.png" alt="巧克力">
+            <div class="card" id="ice-bucket4" onmousedown="pressStart('ice-bucket4')" onmouseup="pressEnd()" ontouchstart="pressStart('ice-bucket4')" ontouchend="pressEnd()">
+                <img src="ice-bucket/ice-bucket4.png" alt="巧克力">
                 <h4>巧克力</h4>
             </div>
-            <div class="card" id="item10" onmousedown="pressStart('item10')" onmouseup="pressEnd()" ontouchstart="pressStart('item10')" ontouchend="pressEnd()">
-                <img src="ice-bucket/1-5.png" alt="芒果">
+            <div class="card" id="ice-bucket5" onmousedown="pressStart('ice-bucket5')" onmouseup="pressEnd()" ontouchstart="pressStart('ice-bucket5')" ontouchend="pressEnd()">
+                <img src="ice-bucket/ice-bucket5.png" alt="芒果">
                 <h4>芒果</h4>
             </div>
         </div>
     </div>
+    <div id="cat3" class="tab-content"> <div class="grid">
+        <div class="card" id="benason1" onmousedown="pressStart('benason1')" onmouseup="pressEnd()" ontouchstart="pressStart('benason1')" ontouchend="pressEnd()">
+            <img src="benason/benason1.jpg">
+            <h4>深培風味</h4>
+        </div>
+    </div>
+</div>
 
     <script>
         let pressTimer;
