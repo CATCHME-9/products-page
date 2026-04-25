@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>口味展示目錄</title>
+    <style>
+        :root { --primary-color: #4a90e2; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f8f9fa; margin: 0; padding: 20px; color: #333; }
+        
+        /* 分頁標籤樣式 */
+        .tabs { display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 2px solid #ddd; padding-bottom: 10px; overflow-x: auto; }
+        .tab-link { border: none; background: none; padding: 10px 20px; font-size: 16px; cursor: pointer; border-radius: 5px; white-space: nowrap; }
+        .tab-link.active { background: var(--primary-color); color: white; }
+
+        /* 展示區樣式 */
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; }
+        
+        /* 口味卡片 */
+        .card { 
+            background: white; padding: 10px; border-radius: 12px; text-align: center;
+            position: relative; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            user-select: none; -webkit-user-select: none; /* 防止手機長按噴出選單 */
+            transition: transform 0.2s;
+        }
+        .card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; pointer-events: none; }
+        .card h4 { margin: 10px 0 5px; font-size: 15px; }
+
+        /* 缺貨樣式 */
+        .card.out { opacity: 0.4; filter: grayscale(100%); }
+        .card.out::after { 
+            content: "SOLD OUT"; position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            background: rgba(0,0,0,0.7); color: white; padding: 4px 8px;
+            font-weight: bold; border: 2px solid white; border-radius: 4px; pointer-events: none;
+        }
+
+        /* 長按時的視覺提示 */
+        .card:active { transform: scale(0.95); }
+    </style>
+</head>
+<body>
+
+    <div class="tabs">
+        <button class="tab-link active" onclick="showCategory('cat1')">經典口味</button>
+        <button class="tab-link" onclick="showCategory('cat2')">季節限定</button>
+    </div>
+
+    <div id="cat1" class="tab-content active">
+        <div class="grid">
+            <div class="card" id="item1" onmousedown="pressStart('item1')" onmouseup="pressEnd()" ontouchstart="pressStart('item1')" ontouchend="pressEnd()">
+                <img src="https://via.placeholder.com/150/e9ecef/495057?text=Flavor+A" alt="口味A">
+                <h4>濃郁抹茶</h4>
+            </div>
+            <div class="card" id="item2" onmousedown="pressStart('item2')" onmouseup="pressEnd()" ontouchstart="pressStart('item2')" ontouchend="pressEnd()">
+                <img src="https://via.placeholder.com/150/e9ecef/495057?text=Flavor+B" alt="口味B">
+                <h4>苦甜巧克力</h4>
+            </div>
+        </div>
+    </div>
+
+    <div id="cat2" class="tab-content">
+        <div class="grid">
+            <div class="card" id="item3" onmousedown="pressStart('item3')" onmouseup="pressEnd()" ontouchstart="pressStart('item3')" ontouchend="pressEnd()">
+                <img src="https://via.placeholder.com/150/e9ecef/495057?text=Flavor+C" alt="口味C">
+                <h4>大湖草莓</h4>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let pressTimer;
+
+        // 1. 分頁切換邏輯
+        function showCategory(catId) {
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.querySelectorAll('.tab-link').forEach(l => l.classList.remove('active'));
+            document.getElementById(catId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        // 2. 長按邏輯
+        function pressStart(id) {
+            pressTimer = setTimeout(() => {
+                const el = document.getElementById(id);
+                const isOut = el.classList.toggle('out');
+                // 儲存狀態到瀏覽器，下次開啟時還在
+                localStorage.setItem(id, isOut ? 'out' : 'in');
+                
+                // 手機震動反饋 (選配)
+                if (navigator.vibrate) navigator.vibrate(50);
+            }, 3000); // 3000 = 3 秒
+        }
+
+        function pressEnd() {
+            clearTimeout(pressTimer);
+        }
+
+        // 3. 頁面載入時恢復狀態
+        window.onload = () => {
+            document.querySelectorAll('.card').forEach(card => {
+                if (localStorage.getItem(card.id) === 'out') {
+                    card.classList.add('out');
+                }
+            });
+        };
+    </script>
+</body>
+</html>
