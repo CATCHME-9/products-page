@@ -47,6 +47,7 @@
         <button class="tab-link active" onclick="showCategory('cat1')">曠世奇派</button>
         <button class="tab-link" onclick="showCategory('cat2')">杜老爺</button>
         <button class="tab-link" onclick="showCategory('cat3')">貝納頌</button>
+        <button class="tab-link" onclick="showCategory('cat4')">每日Ｃ</button>
     </div>
 
     <div id="cat1" class="tab-content active">
@@ -102,7 +103,8 @@
             </div>
         </div>
     </div>
-    <div id="cat3" class="tab-content"> <div class="grid">
+<div id="cat3" class="tab-content"> 
+    <div class="grid">
         <div class="card" id="benason1" onmousedown="pressStart('benason1')" onmouseup="pressEnd()" ontouchstart="pressStart('benason1')" ontouchend="pressEnd()">
             <img src="benason/benason1.jpeg" alt="深培風味">
             <h4>深培風味</h4>
@@ -125,7 +127,26 @@
         </div>
     </div>
 </div>
-
+<div id="cat4" class="tab-content"> 
+    <div class="grid">
+        <div class="card" id="everyday1" onmousedown="pressStart('everyday1')" onmouseup="pressEnd()" ontouchstart="pressStart('everyday1')" ontouchend="pressEnd()">
+            <img src="benason/everyday1.png" alt="100%葡萄綜合">
+            <h4>100%葡萄綜合</h4>
+        </div>
+        <div class="card" id="everyday2" onmousedown="pressStart('everyday2')" onmouseup="pressEnd()" ontouchstart="pressStart('everyday2')" ontouchend="pressEnd()">
+            <img src="benason/everyday2.jpeg" alt="100%莓果綜合">
+            <h4>100%莓果綜合</h4>
+        </div>
+        <div class="card" id="everyday3" onmousedown="pressStart('everyday3')" onmouseup="pressEnd()" ontouchstart="pressStart('everyday3')" ontouchend="pressEnd()">
+            <img src="benason/everyday3.jpeg" alt="100%柳橙蜜柑">
+            <h4>100%柳橙蜜柑</h4>
+        </div>
+        <div class="card" id="everyday4" onmousedown="pressStart('everyday4')" onmouseup="pressEnd()" ontouchstart="pressStart('everyday4')" ontouchend="pressEnd()">
+            <img src="benason/everyday4.png" alt="100%荔枝綜合">
+            <h4>100%荔枝綜合</h4>
+        </div>
+    </div>
+</div>
     <script>
         let pressTimer;
 
