@@ -17,7 +17,22 @@
         .tab-content { display: none; }
         .tab-content.active { display: block; }
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 15px; }
-        
+
+        /* 設定標籤的外觀 */
+        .tag {
+            position: absolute;   /* 絕對定位 */
+            top: 15px;            /* 距離上方 15px */
+            left: 15px;           /* 距離左方 15px */
+            background: #ff4757;  /* 標籤顏色（紅） */
+            color: white;         /* 文字顏色 */
+            padding: 4px 8px;     /* 內邊距 */
+            font-size: 12px;      /* 字體大小 */
+            font-weight: bold;    /* 加粗 */
+            border-radius: 4px;   /* 圓角 */
+            z-index: 10;          /* 確保文字在圖片上面 */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+  
         /* 口味卡片 */
         .card { 
             background: white; padding: 10px; border-radius: 12px; text-align: center;
@@ -221,8 +236,9 @@
 <div id="cat7" class="tab-content"> 
     <div class="grid">
         <div class="card" id="rourou1" onmousedown="pressStart('rourou1')" onmouseup="pressEnd()" ontouchstart="pressStart('rourou1')" ontouchend="pressEnd()">
+            <span class="tag">人氣推薦</span>
             <img src="rourou/rourou1.png" alt="義式雞胸肉">
-            <h4>夾1：雞胸肉/義式香草</h4>
+            <h4>夾1：舒肥雞胸肉<br>義式香草</h4>
         </div>
         <div class="card" id="rourou1-1" onmousedown="pressStart('rourou1-1')" onmouseup="pressEnd()" ontouchstart="pressStart('rourou1-1')" ontouchend="pressEnd()">
             <img src="rourou/rourou1-1.png" alt="香蔥雞胸肉">
